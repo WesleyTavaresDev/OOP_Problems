@@ -2,15 +2,16 @@ package telephonecalendar;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Calendar {
     public static void main(String[] args) {
         Calendar phoneCalendar = new Calendar();
 
-        List<Contact> contact = phoneCalendar.contacts();
-
-        for (Contact c : contact)
-            System.out.printf("Name -> %s%nPhone Number -> %s%n", c.getName(), c.getPhoneNumber());
+        List<Contact> contact = phoneCalendar.contacts()
+                .stream()
+                .peek(c -> System.out.printf("Name -> %s%nPhone Number -> %s%n", c.getName(), c.getPhoneNumber()))
+                .toList();
     }
 
     List<Contact> contacts()
