@@ -3,11 +3,13 @@ package telephonecalendar;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class Contact {
+@Setter
+public class Contact extends Calendar {
     private String name;
-    private int phoneNumber;
+    private long phoneNumber;
 }
